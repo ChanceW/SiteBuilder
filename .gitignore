@@ -1,0 +1,5 @@
+/packages/*
+/.vs/*
+/node_modules
+/SiteBuilder/bin
+/SiteBuilder/obj

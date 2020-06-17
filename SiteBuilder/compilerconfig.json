@@ -1,0 +1,10 @@
+﻿[
+  {
+    "outputFile": "ClientApp/src/components/StyleSheet.css",
+    "inputFile": "ClientApp/src/components/StyleSheet.less"
+  },
+  {
+    "outputFile": "ClientApp/src/components/SiteContent.css",
+    "inputFile": "ClientApp/src/components/SiteContent.less"
+  }
+]
