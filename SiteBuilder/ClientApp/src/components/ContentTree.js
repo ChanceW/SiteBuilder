@@ -12,7 +12,7 @@ function reducer(state, action) {
 
 function buildTree(pages) {
     return pages.map((page, idx) => {
-        return <div key={idx} className="pageNode"><span className="glyphicon glyphicon-chevron-right" />   {page.name}
+        return <div className="pageNode"><span className="glyphicon glyphicon-chevron-right" />   {page.name}
             {page.subpages ? buildTree(page.subpages) : null}
         </div>;
     });
