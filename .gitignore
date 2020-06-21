@@ -3,3 +3,4 @@
 /node_modules
 /SiteBuilder/bin
 /SiteBuilder/obj
+/.vscode/*

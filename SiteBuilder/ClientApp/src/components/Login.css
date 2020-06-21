@@ -1,0 +1,20 @@
+.Login-container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid black;
+    width: 30%;
+    height: 30%;
+
+    padding: 6px;
+}
+
+label {
+    display: block;
+}
+
+input,
+label {
+    margin: .4rem 0;
+}

@@ -5,8 +5,10 @@ import { Home } from './components/Home';
 import { FetchData } from './components/FetchData';
 import { Counter } from './components/Counter';
 import SiteContent from './components/SiteContent';
+import { Login } from './components/Login'
 
 import './custom.css'
+import PrivateRoute from './components/PrivateRoute';
 
 export default class App extends Component {
   static displayName = App.name;
@@ -16,8 +18,9 @@ export default class App extends Component {
       <Layout>
         <Route exact path='/' component={Home} />
         <Route path='/counter' component={Counter} />
-        <Route path='/fetch-data' component={FetchData} />
         <Route path='/site-content' component={SiteContent} />
+        <PrivateRoute authenticated={false} path='/fetch-data' component={FetchData} />
+        <Route path='/login' component={Login} />
       </Layout>
     );
   }
