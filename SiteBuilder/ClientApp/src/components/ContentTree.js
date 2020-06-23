@@ -12,7 +12,8 @@ function reducer(state, action) {
 
 function buildTree(pages) {
     return pages.map((page, idx) => {
-        return <div className="pageNode"><span className="glyphicon glyphicon-chevron-right" />   {page.name}
+        const icon = idx === 0 ? "glyphicon glyphicon-home" : page.subpages ? "glyphicon glyphicon-chevron-right" : "";
+        return <div className="pageNode"><span className={icon} />   {page.name}
             {page.subpages ? buildTree(page.subpages) : null}
         </div>;
     });

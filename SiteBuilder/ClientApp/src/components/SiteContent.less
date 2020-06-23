@@ -1,4 +1,19 @@
-﻿.main {
+﻿@color-primary: #8FBC8F;
+@color-secondary: #f3f3f5;
+@color-tertiary: #696969;
+
+
+nav {
+    background-color: @color-primary;
+}
+
+body {
+    color: @color-tertiary;
+}
+
+
+
+.main {
     display: flex;
     padding-top: 25px;
     top: 45px;
@@ -13,8 +28,8 @@
 
     > div:nth-child(1) {
         width: 15%;
-        border-right: 2px solid #696969;
-        background-color: #f3f3f5;
+        border-right: 2px solid @color-tertiary;
+        background-color: @color-secondary;
     }
 
     > div:nth-child(2) {
@@ -35,7 +50,7 @@
     overflow-y: auto;
 
     .header {
-        background: #f3f3f5;
+        background: @color-secondary;
         height: 50px;
         margin-bottom: 20px;
         text-align: right;
@@ -49,7 +64,7 @@
 
             &.active {
                 background: #ffffff;
-                border-top: solid 5px #696969;
+                border-top: solid 5px @color-tertiary;
                 border-top-left-radius: 5px;
                 border-top-right-radius: 5px;
             }
@@ -59,22 +74,31 @@
     .section {
         width: 70%;
         height: 150px;
-        border: 2px solid #696969;
+        border: 2px solid @color-tertiary;
         border-radius: 10px;
         margin: 0 auto 10px auto;
     }
 
     .addSection {
-        &:hover {
-            color: green;
-            border: 2px inset green;
-        }
-
         width: 70%;
-        border: 2px inset #696969;
+        border: 2px inset @color-tertiary;
         border-radius: 10px;
         margin: 10px auto 20px auto;
         cursor: pointer;
         padding: 10px;
+
+        &:hover {
+            color: green;
+            > span {
+                background-color: green;
+            }
+        }
+
+        > span {
+            color: #ffffff;
+            padding: 10px;
+            background-color: @color-tertiary;
+            border-radius: 25px;
+        }
     }
 }

@@ -1,4 +1,10 @@
-﻿.main {
+﻿nav {
+  background-color: #8FBC8F;
+}
+body {
+  color: #696969;
+}
+.main {
   display: flex;
   padding-top: 25px;
   top: 45px;
@@ -63,5 +69,13 @@
 }
 .pageDesigner .addSection:hover {
   color: green;
-  border: 2px inset green;
+}
+.pageDesigner .addSection:hover > span {
+  background-color: green;
+}
+.pageDesigner .addSection > span {
+  color: #ffffff;
+  padding: 10px;
+  background-color: #696969;
+  border-radius: 25px;
 }
