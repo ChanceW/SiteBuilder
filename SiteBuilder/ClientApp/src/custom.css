@@ -1,3 +1,12 @@
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+html {
+    font-size: 16px;
+  }
+}
+
 /* Provide sufficient contrast against white background */
 a {
   color: #0366d6;

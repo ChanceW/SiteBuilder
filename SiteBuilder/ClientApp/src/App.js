@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router';
-import { Layout } from './components/Layout';
-import { Home } from './components/Home';
-import { FetchData } from './components/FetchData';
-import { Counter } from './components/Counter';
-import SiteContent from './components/SiteContent';
-import { Login } from './components/Login'
+import Layout from './components/Common/Layout';
+import Home  from './components/Admin/Home';
+import SiteContent from './components/Admin/SiteContent';
+import Login from './components/Common/Login'
 
 import './custom.css'
-import PrivateRoute from './components/PrivateRoute';
+import PrivateRoute from './components/Common/PrivateRoute';
 
 export default class App extends Component {
   static displayName = App.name;
@@ -17,9 +15,7 @@ export default class App extends Component {
     return (
       <Layout>
         <Route exact path='/' component={Home} />
-        <Route path='/counter' component={Counter} />
         <Route path='/site-content' component={SiteContent} />
-        <PrivateRoute authenticated={false} path='/fetch-data' component={FetchData} />
         <Route path='/login' component={Login} />
       </Layout>
     );
