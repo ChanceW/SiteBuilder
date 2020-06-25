@@ -7,6 +7,7 @@ import Login from './components/Common/Login'
 
 import './custom.css'
 import PrivateRoute from './components/Common/PrivateRoute';
+import AuthClient from './clients/AuthClient';
 
 export default class App extends Component {
   static displayName = App.name;
@@ -14,8 +15,8 @@ export default class App extends Component {
   render () {
     return (
       <Layout>
-        <Route exact path='/' component={Home} />
-        <Route path='/site-content' component={SiteContent} />
+        <PrivateRoute authenticated={AuthClient.isAuthenticated} exact path='/' component={Home} />
+        <PrivateRoute authenticated={AuthClient.isAuthenticated} path='/site-content' component={SiteContent} />
         <Route path='/login' component={Login} />
       </Layout>
     );
