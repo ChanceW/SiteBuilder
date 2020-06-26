@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState } from 'react';
 import './Login.css';
 import {
     Container, Col, Form,
@@ -7,14 +7,14 @@ import {
   } from 'reactstrap';
 import AuthClient from '../../clients/AuthClient';
 
-export default function Login() {
+export default function Login(props) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     const handleSubmit = async (event) => {
         event.preventDefault();
         const success = await AuthClient.Login(email, password);
-        alert(success);
+        props.onLoginAttempted(success);
     }
 
     return (
