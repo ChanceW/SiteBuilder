@@ -1,4 +1,4 @@
-﻿nav {
+nav {
   background-color: #8FBC8F;
 }
 body {
@@ -17,7 +17,7 @@ body {
   overflow-y: auto;
 }
 .main > div:nth-child(1) {
-  width: 15%;
+  width: 20%;
   border-right: 2px solid #696969;
   background-color: #f3f3f5;
 }
@@ -26,7 +26,31 @@ body {
 }
 .contentTree .pageNode {
   cursor: pointer;
-  margin-left: 30px;
+  padding: 10px 0 10px 30px;
+}
+.contentTree .pageNode:hover .contextMenu {
+  display: block;
+}
+.contentTree .pageNode .contextMenu {
+  display: none;
+  float: right;
+  padding-right: 3px;
+}
+.contentTree .pageNode .contextMenu .contextItem {
+  padding: 3px;
+  border-radius: 5px;
+  font-size: 12px;
+}
+.contentTree .pageNode .contextMenu .contextItem:hover {
+  background-color: #696969;
+  color: #ffffff;
+}
+.contentTree .pageNode .contextMenu .glyphicon-remove {
+  color: red;
+  padding-top: 2px;
+}
+.contentTree .pageNode .contextMenu .glyphicon-plus {
+  color: green;
 }
 .pageDesigner {
   text-align: center;

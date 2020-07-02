@@ -27,7 +27,7 @@ body {
     }
 
     > div:nth-child(1) {
-        width: 15%;
+        width: 20%;
         border-right: 2px solid @color-tertiary;
         background-color: @color-secondary;
     }
@@ -40,7 +40,40 @@ body {
 .contentTree {
     .pageNode {
         cursor: pointer;
-        margin-left: 30px;
+        padding: 10px 0 10px 30px;
+
+
+        &:hover {
+            .contextMenu{
+                display:block;
+            }
+        }
+
+        .contextMenu {
+            display:none;
+            float: right;
+            padding-right: 3px;
+
+            .contextItem {
+                padding: 3px;
+                border-radius: 5px;
+                font-size: 12px;
+
+                &:hover {
+                    background-color: @color-tertiary;
+                    color: #ffffff;
+                }
+            }
+
+            .glyphicon-remove {
+                color: red;
+                padding-top: 2px;
+            }
+
+            .glyphicon-plus {
+                color: green;
+            }
+        }
     }
 }
 
