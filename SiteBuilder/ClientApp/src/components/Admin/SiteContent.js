@@ -2,6 +2,7 @@
 import './SiteContent.css';
 import ContentTree from './ContentTree';
 import PageDesigner from './PageDesigner';
+import Settings from './Settings';
 
 //function reducer(state, action) {
 //    switch (action.type) {

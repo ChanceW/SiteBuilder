@@ -6,7 +6,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
-using SiteBuilder.Models;
+using SiteBuilder.Data.Context;
+using SiteBuilder.Services.Admin;
+using SiteBuilder.Services.Interfaces;
 
 namespace SiteBuilder
 {
@@ -22,7 +24,8 @@ namespace SiteBuilder
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<AccountContext>(opt => opt.UseInMemoryDatabase("Accounts"));
+            services.AddDbContext<AdminContext>(opt => opt.UseInMemoryDatabase("Accounts"));
+            services.AddSingleton<IAuthService, AuthService>();
             services.AddControllersWithViews();
 
             // In production, the React files will be served from this directory

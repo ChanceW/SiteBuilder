@@ -1,0 +1,9 @@
+.Accounts table {
+  table-layout: auto;
+}
+.Accounts td {
+  vertical-align: middle;
+}
+.Accounts .EditForm > button:not(:first-of-type) {
+  margin-left: 6px;
+}
