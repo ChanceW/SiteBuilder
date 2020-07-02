@@ -12,10 +12,6 @@ a {
   color: #0366d6;
 }
 
-body {
-    color: #696969;
-}
-
 code {
     color: #E01A76;
 }
@@ -28,6 +24,6 @@ code {
 
 @media (min-width: 1200px) {
     .container {
-        max-width: 90%;
+        max-width: 100%;
     }
 }

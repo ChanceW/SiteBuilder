@@ -1,7 +1,13 @@
+nav {
+  background-color: var(--primaryColor);
+}
+body {
+  color: var(--tertiaryColor);
+}
 .main {
   display: flex;
   padding-top: 25px;
-  top: 105px;
+  top: 45px;
   position: fixed;
   bottom: 5px;
   width: 100%;
@@ -11,35 +17,92 @@
   overflow-y: auto;
 }
 .main > div:nth-child(1) {
-  width: 25%;
-  border-right: 2px solid #696969;
+  width: 20%;
+  border-right: 2px solid var(--tertiaryColor);
+  background-color: var(--secondaryColor);
 }
 .main > div:nth-child(2) {
-  width: 75%;
+  width: 85%;
 }
 .contentTree .pageNode {
   cursor: pointer;
-  margin-left: 30px;
+  padding: 10px 0 10px 30px;
+}
+.contentTree .pageNode:hover {
+  color: var(--primaryColor);
+}
+.contentTree .pageNode:hover .contextMenu {
+  display: block;
+}
+.contentTree .pageNode .contextMenu {
+  display: none;
+  float: right;
+  padding-right: 3px;
+}
+.contentTree .pageNode .contextMenu .contextItem {
+  padding: 3px;
+  border-radius: 5px;
+  font-size: 12px;
+}
+.contentTree .pageNode .contextMenu .contextItem:hover {
+  background-color: var(--tertiaryColor);
+  color: #ffffff;
+}
+.contentTree .pageNode .contextMenu .glyphicon-remove {
+  color: red;
+  padding-top: 2px;
+}
+.contentTree .pageNode .contextMenu .glyphicon-plus {
+  color: green;
 }
 .pageDesigner {
   text-align: center;
   height: 100%;
   overflow-y: auto;
 }
+.pageDesigner .header {
+  background: var(--secondaryColor);
+  height: 50px;
+  margin-bottom: 20px;
+  text-align: right;
+  padding-right: 50px;
+}
+.pageDesigner .header .tab {
+  display: inline-block;
+  padding: 10px 20px;
+  height: 100%;
+  cursor: pointer;
+}
+.pageDesigner .header .tab.active {
+  background: #ffffff;
+  border-top: solid 5px var(--tertiaryColor);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
 .pageDesigner .section {
   width: 70%;
   height: 150px;
-  border: 2px inset #696969;
-  margin: 0 auto 20px auto;
+  border: 2px solid var(--tertiaryColor);
+  border-radius: 10px;
+  margin: 0 auto 10px auto;
 }
 .pageDesigner .addSection {
   width: 70%;
-  border: 2px inset #696969;
-  margin: 0 auto 20px auto;
+  border: 2px inset var(--tertiaryColor);
+  border-radius: 10px;
+  margin: 10px auto 20px auto;
   cursor: pointer;
   padding: 10px;
 }
 .pageDesigner .addSection:hover {
   color: green;
-  border: 2px inset green;
+}
+.pageDesigner .addSection:hover > span {
+  background-color: green;
+}
+.pageDesigner .addSection > span {
+  color: #ffffff;
+  padding: 10px;
+  background-color: var(--tertiaryColor);
+  border-radius: 25px;
 }

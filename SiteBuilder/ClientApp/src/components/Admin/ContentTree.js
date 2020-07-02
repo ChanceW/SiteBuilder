@@ -1,33 +1,29 @@
-﻿import React, { useReducer, useEffect } from 'react';
+﻿import React from 'react';
 
-function reducer(state, action) {
-    switch (action.type) {
-        case 'pages':
-            state.pages = action.value;
-            return { pages: action.value, ...state }; 
-        default:
-            throw new Error();
-    }
-}
+export default function ContentTree(props) {
+    const getContextMenu = (page) => {
+        return <div className="contextMenu">
+            <span className="contextItem glyphicon glyphicon-plus" onClick={props.addPage} title="Add Child Page"></span>
+            {!page.isRoot ? <span className="contextItem glyphicon glyphicon-remove" title="Delete Page"></span> : null}
+        </div>
+    };
 
-function buildTree(pages) {
-    return pages.map((page, idx) => {
-        return <div key={idx} className="pageNode"><span className="glyphicon glyphicon-chevron-right" />   {page.name}
-            {page.subpages ? buildTree(page.subpages) : null}
-        </div>;
-    });
-}
-
-export default function ContentTree() {
-    const [state, dispatch] = useReducer(reducer, { pages: []});
-
-    useEffect(() => {
-        var pages = [{ name: 'Home'}];
-        dispatch({ type: 'pages', value: pages });
-    }, []);
-
+    const buildTree = (pages, level) => {
+        level = level ? level : 0;
+        let childIdx = 0;
+        return pages ? pages.map((page) => {
+            const icon = page.isRoot ? "glyphicon glyphicon-home" : page.subpages ? "glyphicon glyphicon-chevron-down" : "";
+            const indent = { paddingLeft: (level * 30) + "px" };
+            return <div key={childIdx++} className="nodeContainer" style={indent}>
+                <div className="pageNode"><span className={icon} />   {page.name}
+                {getContextMenu(page)}
+                </div>
+                {page.subpages ? buildTree(page.subpages, ++level) : null}
+            </div>;
+        }) : null;
+    };
 
     return <div className="contentTree">
-        {buildTree(state.pages)}
+        {buildTree(props.pages)}
     </div>;
 }
