@@ -1,14 +1,9 @@
-﻿@color-primary: #8FBC8F;
-@color-secondary: #f3f3f5;
-@color-tertiary: #696969;
-
-
-nav {
-    background-color: @color-primary;
+﻿nav {
+    background-color: var(--primaryColor);
 }
 
 body {
-    color: @color-tertiary;
+    color: var(--tertiaryColor);
 }
 
 
@@ -28,8 +23,8 @@ body {
 
     > div:nth-child(1) {
         width: 20%;
-        border-right: 2px solid @color-tertiary;
-        background-color: @color-secondary;
+        border-right: 2px solid var(--tertiaryColor);
+        background-color: var(--secondaryColor);
     }
 
     > div:nth-child(2) {
@@ -44,7 +39,7 @@ body {
 
 
         &:hover {
-            color: @color-primary;
+            color: var(--primaryColor);
 
             .contextMenu{
                 display:block;
@@ -62,7 +57,7 @@ body {
                 font-size: 12px;
 
                 &:hover {
-                    background-color: @color-tertiary;
+                    background-color: var(--tertiaryColor);
                     color: #ffffff;
                 }
             }
@@ -85,7 +80,7 @@ body {
     overflow-y: auto;
 
     .header {
-        background: @color-secondary;
+        background: var(--secondaryColor);
         height: 50px;
         margin-bottom: 20px;
         text-align: right;
@@ -99,7 +94,7 @@ body {
 
             &.active {
                 background: #ffffff;
-                border-top: solid 5px @color-tertiary;
+                border-top: solid 5px var(--tertiaryColor);
                 border-top-left-radius: 5px;
                 border-top-right-radius: 5px;
             }
@@ -109,14 +104,14 @@ body {
     .section {
         width: 70%;
         height: 150px;
-        border: 2px solid @color-tertiary;
+        border: 2px solid var(--tertiaryColor);
         border-radius: 10px;
         margin: 0 auto 10px auto;
     }
 
     .addSection {
         width: 70%;
-        border: 2px inset @color-tertiary;
+        border: 2px inset var(--tertiaryColor);
         border-radius: 10px;
         margin: 10px auto 20px auto;
         cursor: pointer;
@@ -132,7 +127,7 @@ body {
         > span {
             color: #ffffff;
             padding: 10px;
-            background-color: @color-tertiary;
+            background-color: var(--tertiaryColor);
             border-radius: 25px;
         }
     }

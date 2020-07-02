@@ -12,7 +12,7 @@ export default function ContentTree(props) {
         level = level ? level : 0;
         let childIdx = 0;
         return pages ? pages.map((page) => {
-            const icon = page.isRoot ? "glyphicon glyphicon-home" : page.subpages ? "glyphicon glyphicon-chevron-right" : "";
+            const icon = page.isRoot ? "glyphicon glyphicon-home" : page.subpages ? "glyphicon glyphicon-chevron-down" : "";
             const indent = { paddingLeft: (level * 30) + "px" };
             return <div key={childIdx++} className="nodeContainer" style={indent}>
                 <div className="pageNode"><span className={icon} />   {page.name}
