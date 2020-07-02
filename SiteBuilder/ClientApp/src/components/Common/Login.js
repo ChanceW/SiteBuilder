@@ -5,14 +5,16 @@ import {
     FormGroup, Label, Input,
     Button
   } from 'reactstrap';
+import AuthClient from '../../clients/AuthClient';
 
-export default function Login() {
+export default function Login(props) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
-        alert(`Login with email: ${email} and password: ${password}`);
+        const success = await AuthClient.Login(email, password);
+        props.onLoginAttempted(success);
     }
 
     return (
