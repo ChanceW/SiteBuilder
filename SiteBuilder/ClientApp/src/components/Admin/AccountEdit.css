@@ -1,0 +1,3 @@
+.AccountEdit > button:not(:first-of-type) {
+  margin-left: 6px;
+}

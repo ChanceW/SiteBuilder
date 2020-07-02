@@ -1,0 +1,18 @@
+.Settings {
+  padding-bottom: 3px;
+  display: inline-block;
+  width: 100%;
+}
+.Settings .btn-group {
+  width: 100%;
+}
+.Settings button {
+  color: #696969;
+  background-color: #fff;
+  border-color: #fff;
+  width: 100%;
+}
+.Settings button > div {
+  padding-left: 6px;
+  display: inline-block;
+}

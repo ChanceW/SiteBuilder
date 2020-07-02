@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { Route } from 'react-router';
 import Layout from './components/Common/Layout';
 import Home  from './components/Admin/Home';
-import Admin from './components/Admin/Admin';
-
+import AdminController from './components/Admin/AdminController';
 import './custom.css'
 
 export default class App extends Component {
@@ -13,7 +12,7 @@ export default class App extends Component {
     return (
       <Layout>
         <Route exact path='/' component={Home} />
-        <Route path='/admin' component={Admin} />
+        <Route path='/admin' component={AdminController} />
       </Layout>
     );
   }
