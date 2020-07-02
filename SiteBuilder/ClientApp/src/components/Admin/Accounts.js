@@ -36,7 +36,7 @@ export default function Accounts() {
                 <tr key={id}>
                     <th scope="row">{id}</th>
                     <td>{email}</td>
-                    <td><Button color="primary" size="sm" onClick={() => openAccountEditMode(index)}>Edit</Button></td>
+                    <td><Button active={!editModeState.editModeEnabled} color="primary" size="sm" onClick={() => openAccountEditMode(index)}>Edit</Button></td>
                 </tr>
             )
         });
@@ -62,7 +62,7 @@ export default function Accounts() {
     }
 
     return (
-        <Container className="Accounts">
+        <Container className="Accounts" fluid>
             <Row>
                 <Col md="8">
                     <Table hover>

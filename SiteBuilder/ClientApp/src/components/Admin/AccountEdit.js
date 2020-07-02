@@ -3,6 +3,8 @@ import {Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
 import AuthClient from '../../clients/AuthClient';
 
+import './AccountEdit.css'
+
 export default function AccountEdit(props) {
     const accountId = props.id;
     const [email, setEmail] = useState(props.email);
@@ -21,7 +23,7 @@ export default function AccountEdit(props) {
     }
 
     return (
-        <Form className="EditForm" onSubmit={onEditFormSave}>
+    <Form className="AccountEdit" onSubmit={onEditFormSave}>
         <FormGroup>
             <Label for="exampleEmail">Email</Label>
             <Input 
