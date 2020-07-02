@@ -28,6 +28,9 @@ body {
   cursor: pointer;
   padding: 10px 0 10px 30px;
 }
+.contentTree .pageNode:hover {
+  color: #8FBC8F;
+}
 .contentTree .pageNode:hover .contextMenu {
   display: block;
 }

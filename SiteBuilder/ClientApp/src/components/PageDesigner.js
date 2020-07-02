@@ -24,8 +24,9 @@ function renderHeader(activeTab, dispatch) {
 }
 
 function renderSections(sections) {
+    let childIndex = 0;
     return sections.map((section) => {
-        return <div className="section">{section.name}</div>
+        return <div key={childIndex++} className="section">{section.name}</div>
     });
 }
 

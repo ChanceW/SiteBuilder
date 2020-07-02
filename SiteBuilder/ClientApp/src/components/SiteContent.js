@@ -17,7 +17,7 @@ export default function SiteContent() {
     const [state, dispatch] = useReducer(reducer, {});
 
     const addPage = () => {
-        var pages = [{ name: "Home", isRoot: true }, { name:"Page1_Lvl2", hasChildren: true}];
+        var pages = [{ name: "Home", isRoot: true, subpages: [{ name: "Page1_Lvl2", subpages: [{ name: "Page1_Lvl3" }] }, { name: "Page2_Lvl2" }]}];
         dispatch({ "type": "pages", value: pages });
     };
 
